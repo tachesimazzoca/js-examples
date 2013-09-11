@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>js-examples/preload</title>
-<script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="../assets/js/preload.js"></script>
 <script type="text/javascript">
 (function($) {
@@ -19,6 +19,12 @@
     var loader = new Preload.ImageLoader();
     loader.on("complete", function() {
       $('#app').show();
+      // Get all resources;
+      console.log(loader.getResources());
+      // Get one of the resources;
+      console.log(loader.getResource("images/red.gif"));
+      // Clear all resources if needed;
+      //loader.clearResources();
     });
     loader.load([
       "images/black.gif"
@@ -26,8 +32,8 @@
     , "images/green.gif"
     , "images/blue.gif"
     , "images/cyan.gif"
-    , "images/yellow.gif"
     , "images/magenta.gif"
+    , "images/yellow.gif"
     ]);
   });
 })(window.jQuery);
@@ -40,8 +46,8 @@
      <li><img src="images/black.gif" data-src="images/green.gif"></li>
      <li><img src="images/black.gif" data-src="images/blue.gif"></li>
      <li><img src="images/black.gif" data-src="images/cyan.gif"></li>
-     <li><img src="images/black.gif" data-src="images/yellow.gif"></li>
      <li><img src="images/black.gif" data-src="images/magenta.gif"></li>
+     <li><img src="images/black.gif" data-src="images/yellow.gif"></li>
     </ul>
     <button id="btn-replace">Replace</button>
   </div>
