@@ -8,7 +8,7 @@ build: node_modules
 	@mkdir build
 	@cp src/*.html build/.
 	@node_modules/.bin/browserify -t [ babelify --presets [ react ] ] src/main.js > build/bundle.js
-	@node_modules/.bin/uglifyjs -nc build/bundle.js > build/bundle.min.js
+	@node_modules/.bin/uglifyjs build/bundle.js > build/bundle.min.js
 
 .PHONY: checkstyle
 checkstyle:
